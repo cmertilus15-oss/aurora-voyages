@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Aurora Voyages — Agencia de Viajes Internacional</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@100;300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+/* IMAGE FIX v2 — ensures overlays stay above real images */
+.dest-img-zone { position: relative; }
+.dest-img-bg   { position: relative; overflow: hidden; }
+.dest-card-overlay { z-index: 3 !important; }
+.dest-img-frame-border { z-index: 4 !important; }
+.dest-badge-pop { z-index: 5 !important; }
+.sc-placeholder-frame { overflow: hidden; }
+.tcv-img-frame { overflow: visible; }
+.bcv-img { position: relative; overflow: hidden; }
+.bcv-cat { position: relative; z-index: 3 !important; }
+.cs-overlay-v2 { position: absolute; z-index: 3 !important; }
+.cs-deco-frame { z-index: 2 !important; }
+</style>
+</head>
+<body>
+
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<div id="progress-bar"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-globe-wrap">
+      <div class="loader-globe">🌍</div>
+      <div class="loader-orbit"></div>
+      <div class="loader-plane-orbit">✈</div>
+    </div>
+    <p class="loader-text">AURORA VOYAGES</p>
+    <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+    <p class="loader-sub">Preparando tu aventura...</p>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="#hero" class="nav-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="30" r="27" stroke="#C9A84C" stroke-width="1.5"/>
+          <circle cx="30" cy="30" r="20" stroke="#C9A84C" stroke-width="0.5" stroke-dasharray="2 3"/>
+          <path d="M30 8 L32 20 L30 18 L28 20 Z" fill="#C9A84C"/>
+          <path d="M52 30 L40 28 L42 30 L40 32 Z" fill="#C9A84C"/>
+          <path d="M30 52 L28 40 L30 42 L32 40 Z" fill="#C9A84C"/>
+          <path d="M8 30 L20 32 L18 30 L20 28 Z" fill="#C9A84C"/>
+          <circle cx="30" cy="30" r="3" fill="#C9A84C"/>
+          <path d="M15 20 Q30 15 45 22" stroke="#C9A84C" stroke-width="0.8" stroke-dasharray="3 2" fill="none"/>
+          <path d="M42 20 L46 22 L42 24 L43 22 Z" fill="#C9A84C"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-main">AURORA</span>
+        <span class="logo-sub-text">VOYAGES</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="nav-link"><span>01</span>Inicio</a></li>
+      <li><a href="#about" class="nav-link"><span>02</span>Historia</a></li>
+      <li><a href="#destinations" class="nav-link"><span>03</span>Destinos</a></li>
+      <li><a href="#tours" class="nav-link"><span>04</span>Tours</a></li>
+      <li><a href="#experiences" class="nav-link"><span>05</span>Experiencias</a></li>
+      <li><a href="#gallery" class="nav-link"><span>06</span>Galería</a></li>
+      <li><a href="#blog" class="nav-link"><span>07</span>Blog</a></li>
+      <li><a href="#contact" class="nav-link"><span>08</span>Contacto</a></li>
+      <li><a href="#booking" class="nav-btn">✈ Reservar</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section id="hero" class="hero">
+
+  <!-- MEGA SURREAL WORLD SCENE -->
+  <div class="world-scene">
+    <!-- Earth -->
+    <div class="scene-earth">🌍</div>
+    <!-- Globe vintage -->
+    <div class="scene-globe">🌐</div>
+    <!-- Compass -->
+    <div class="scene-compass">🧭</div>
+    <!-- Islands -->
+    <div class="scene-island si1">🏝️</div>
+    <div class="scene-island si2">🏝️</div>
+    <!-- Big palm trees -->
+    <div class="scene-palms palm-L">
+      <span class="sp sp1">🌴</span>
+      <span class="sp sp2">🌴</span>
+      <span class="sp sp3">🌴</span>
+    </div>
+    <div class="scene-palms palm-R">
+      <span class="sp sp1">🌴</span>
+      <span class="sp sp2">🌴</span>
+    </div>
+    <!-- Suitcases floating -->
+    <div class="scene-float sf-suit1">🧳</div>
+    <div class="scene-float sf-suit2">🧳</div>
+    <div class="scene-float sf-suit3">💼</div>
+    <!-- Beach items -->
+    <div class="scene-float sf-float1">🏊</div>
+    <div class="scene-float sf-glasses">🕶️</div>
+    <div class="scene-float sf-map">🗺️</div>
+    <div class="scene-float sf-pass">🛂</div>
+    <!-- Airplanes -->
+    <div class="scene-plane sp-big-1">
+      <div class="plane-body">✈</div>
+      <div class="plane-trail-line"></div>
+    </div>
+    <div class="scene-plane sp-big-2">
+      <div class="plane-body">✈</div>
+      <div class="plane-trail-line"></div>
+    </div>
+    <div class="scene-plane sp-big-3">
+      <div class="plane-body">✈</div>
+    </div>
+    <!-- Airplane windows with surreal landscapes -->
+    <div class="scene-av-windows">
+      <div class="av-window avw1">
+        <div class="avw-view avw-paris" style="background-image:url('images/image-3.png');background-size:cover;background-position:center;"></div>
+        <div class="avw-shine"></div>
+        <div class="avw-label">París ✨</div>
+      </div>
+      <div class="av-window avw2">
+        <div class="avw-view avw-bali" style="background-image:url('images/image-4.png');background-size:cover;background-position:center;"></div>
+        <div class="avw-shine"></div>
+        <div class="avw-label">Bali 🌿</div>
+      </div>
+      <div class="av-window avw3">
+        <div class="avw-view avw-africa" style="background-image:url('images/image-5.png');background-size:cover;background-position:center;"></div>
+        <div class="avw-shine"></div>
+        <div class="avw-label">Safari 🦁</div>
+      </div>
+    </div>
+    <!-- Clouds -->
+    <div class="scene-cloud sc1"></div>
+    <div class="scene-cloud sc2"></div>
+    <div class="scene-cloud sc3"></div>
+    <div class="scene-cloud sc4"></div>
+    <!-- Decorative stamps -->
+    <div class="scene-stamp ss1"><div class="stamp-inner">📮 PARIS</div></div>
+    <div class="scene-stamp ss2"><div class="stamp-inner">📮 TOKIO</div></div>
+    <div class="scene-stamp ss3"><div class="stamp-inner">📮 SAFARI</div></div>
+    <!-- Stars sparkle -->
+    <div class="scene-stars">
+      <span class="star-dot sd1">✦</span>
+      <span class="star-dot sd2">✦</span>
+      <span class="star-dot sd3">★</span>
+      <span class="star-dot sd4">✦</span>
+      <span class="star-dot sd5">★</span>
+    </div>
+  </div>
+
+  <!-- Welcome scroll ticker -->
+  <div class="welcome-ticker">
+    <div class="ticker-track">
+      <span>✦ BIENVENIDO A AURORA VOYAGES</span>
+      <span>✈ VIAJES INTERNACIONALES PREMIUM</span>
+      <span>🌍 85+ PAÍSES</span>
+      <span>🧳 DESTINOS EXCLUSIVOS</span>
+      <span>🧭 EXPERIENCIAS ÚNICAS</span>
+      <span>🌴 PARAÍSOS TROPICALES</span>
+      <span>🏝️ ISLAS PRIVADAS</span>
+      <span>✦ BIENVENIDO A AURORA VOYAGES</span>
+      <span>✈ VIAJES INTERNACIONALES PREMIUM</span>
+      <span>🌍 85+ PAÍSES</span>
+      <span>🧳 DESTINOS EXCLUSIVOS</span>
+    </div>
+  </div>
+
+  <!-- Hero main content -->
+  <div class="hero-content">
+    <div class="hero-badge animate-fade-in">
+      <div class="badge-inner"><i class="fas fa-compass"></i><span>Agencia Premium de Viajes • Est. 2009</span></div>
+    </div>
+    <h1 class="hero-title">
+      <span class="title-line animate-slide-up" style="--delay:0.2s">EL MUNDO</span>
+      <span class="title-line italic animate-slide-up" style="--delay:0.5s">te espera</span>
+      <span class="title-line animate-slide-up" style="--delay:0.8s">DESCÚBRELO</span>
+    </h1>
+    <p class="hero-subtitle" id="heroSubtitle">Creamos experiencias de viaje extraordinarias que transforman cada destino en un recuerdo eterno.</p>
+
+    <div class="hero-cta animate-fade-in" style="--delay:1.4s">
+      <a href="#destinations" class="btn-primary"><i class="fas fa-compass"></i> Explorar Destinos</a>
+      <a href="#booking" class="btn-secondary"><i class="fas fa-plane"></i> Reservar Ahora</a>
+    </div>
+
+    <!-- FUNCTIONAL DESTINATION SEARCH -->
+    <div class="hero-search-section animate-fade-in" style="--delay:1.7s">
+      <div class="search-label">¿A dónde quieres ir?</div>
+      <div class="smart-search-box" id="smartSearch">
+        <div class="ssb-field ssb-dest">
+          <i class="fas fa-map-marker-alt"></i>
+          <input type="text" id="destInput" placeholder="Escribe tu destino soñado..." autocomplete="off" oninput="showSuggestions()" onfocus="showSuggestions()"/>
+          <div class="ssb-suggestions" id="ssbSuggestions"></div>
+        </div>
+        <div class="ssb-field">
+          <i class="fas fa-calendar-alt"></i>
+          <input type="date" id="dateInput"/>
+        </div>
+        <div class="ssb-field">
+          <i class="fas fa-users"></i>
+          <select id="travelersSelect">
+            <option value="1">1 Viajero</option>
+            <option value="2">2 Viajeros</option>
+            <option value="3-5">3-5 Personas</option>
+            <option value="familia">Familia</option>
+            <option value="grupo">Grupo 10+</option>
+          </select>
+        </div>
+        <div class="ssb-field">
+          <i class="fas fa-tag"></i>
+          <select id="budgetSelect">
+            <option value="economico">💚 Económico</option>
+            <option value="intermedio">💛 Intermedio</option>
+            <option value="lujo">🥇 Lujo</option>
+            <option value="ultra">💎 Ultra Lujo</option>
+          </select>
+        </div>
+        <button class="ssb-btn" onclick="confirmDestination()">
+          <i class="fas fa-search"></i> Buscar
+        </button>
+      </div>
+
+      <!-- Confirmed destination card -->
+      <div class="dest-confirmed-card" id="destConfirmedCard" style="display:none">
+        <div class="dcc-icon" id="dccIcon">✈️</div>
+        <div class="dcc-info">
+          <div class="dcc-title" id="dccTitle">¡Destino Confirmado!</div>
+          <div class="dcc-details" id="dccDetails"></div>
+          <div class="dcc-price" id="dccPrice"></div>
+        </div>
+        <div class="dcc-actions">
+          <button class="btn-gold" onclick="goToBookingWithDest()"><i class="fas fa-check-circle"></i> Confirmar y Reservar</button>
+          <button class="btn-outline-gold" onclick="clearSearch()"><i class="fas fa-redo"></i> Cambiar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats row -->
+    <div class="hero-stats animate-fade-in" style="--delay:2.2s">
+      <div class="stat-item"><span class="stat-num" data-target="12000">0</span><span class="stat-label">Viajeros Felices</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat-item"><span class="stat-num" data-target="85">0</span><span class="stat-label">Países</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat-item"><span class="stat-num" data-target="500">0</span><span class="stat-label">Tours</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat-item"><span class="stat-num" data-target="15">0</span><span class="stat-label">Años</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section id="about" class="about-section">
+  <div class="about-bg-deco"></div>
+  <div class="about-floating-items">
+    <div class="afi afi1">🧭</div>
+    <div class="afi afi2">🗺️</div>
+    <div class="afi afi3">✈️</div>
+    <div class="afi afi4">🌴</div>
+    <div class="afi afi5">🌐</div>
+  </div>
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-tag">Nuestra Historia</div>
+      <h2 class="section-title">Donde Cada Viaje<br/><em>se convierte en leyenda</em></h2>
+      <p class="section-desc">15 años conectando sueños con destinos extraordinarios alrededor del mundo</p>
+    </div>
+
+    <!-- 3 animated story cards with real image placeholders -->
+    <div class="story-cards-grid">
+
+      <div class="story-card sc-anim reveal-card" style="--cd:0s">
+        <!-- IMAGE PLACEHOLDER 1 — replace src with real photo -->
+        <div class="sc-image-zone">
+          <div class="sc-placeholder-frame">
+            <img src="images/image-6.png" alt="Equipo fundador Aurora Voyages 2009" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+          </div>
+          <div class="sc-year-tag">2009</div>
+          <div class="sc-frame-corner sc-fc-tl"></div>
+          <div class="sc-frame-corner sc-fc-tr"></div>
+          <div class="sc-frame-corner sc-fc-bl"></div>
+          <div class="sc-frame-corner sc-fc-br"></div>
+        </div>
+        <div class="sc-content">
+          <div class="sc-emoji-icon">🌱</div>
+          <h3>El Comienzo</h3>
+          <p>En 2009, tres apasionados viajeros fundaron Aurora Voyages en Santo Domingo con un sueño: hacer el mundo accesible para todos. Comenzamos con apenas 3 destinos.</p>
+        </div>
+        <div class="sc-shimmer"></div>
+      </div>
+
+      <div class="story-card sc-anim reveal-card" style="--cd:0.15s">
+        <!-- IMAGE PLACEHOLDER 2 -->
+        <div class="sc-image-zone">
+          <div class="sc-placeholder-frame">
+            <img src="images/image-7.png" alt="Viajeros felices Aurora Voyages 2015" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+          </div>
+          <div class="sc-year-tag">2015</div>
+          <div class="sc-frame-corner sc-fc-tl"></div>
+          <div class="sc-frame-corner sc-fc-tr"></div>
+          <div class="sc-frame-corner sc-fc-bl"></div>
+          <div class="sc-frame-corner sc-fc-br"></div>
+        </div>
+        <div class="sc-content">
+          <div class="sc-emoji-icon">🚀</div>
+          <h3>La Expansión</h3>
+          <p>Para 2015 atendíamos más de 5,000 viajeros anuales. Expandimos nuestra red a 40 países y abrimos oficinas en Miami, Madrid y Ciudad de México.</p>
+        </div>
+        <div class="sc-shimmer"></div>
+      </div>
+
+      <div class="story-card sc-anim reveal-card" style="--cd:0.3s">
+        <!-- IMAGE PLACEHOLDER 3 -->
+        <div class="sc-image-zone">
+          <div class="sc-placeholder-frame">
+            <img src="images/image-8.png" alt="Premios y logros Aurora Voyages" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+          </div>
+          <div class="sc-year-tag">Hoy</div>
+          <div class="sc-frame-corner sc-fc-tl"></div>
+          <div class="sc-frame-corner sc-fc-tr"></div>
+          <div class="sc-frame-corner sc-fc-bl"></div>
+          <div class="sc-frame-corner sc-fc-br"></div>
+        </div>
+        <div class="sc-content">
+          <div class="sc-emoji-icon">🏆</div>
+          <h3>La Excelencia</h3>
+          <p>Hoy somos la agencia más premiada del Caribe con 12,000+ viajeros anuales, 85 países y el reconocimiento IATA de excelencia internacional.</p>
+        </div>
+        <div class="sc-shimmer"></div>
+      </div>
+
+    </div>
+
+    <div class="about-features-row reveal-up">
+      <div class="afr-item"><i class="fas fa-compass"></i><span>Itinerarios Personalizados</span></div>
+      <div class="afr-item"><i class="fas fa-headset"></i><span>Soporte 24/7</span></div>
+      <div class="afr-item"><i class="fas fa-shield-alt"></i><span>Viajes Asegurados</span></div>
+      <div class="afr-item"><i class="fas fa-star"></i><span>Guías Certificados</span></div>
+      <div class="afr-item"><i class="fas fa-globe"></i><span>85+ Países</span></div>
+      <div class="afr-item"><i class="fas fa-award"></i><span>Premio IATA</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ DESTINATIONS ══════════ -->
+<section id="destinations" class="destinations-section">
+  <div class="dest-surreal-bg">
+    <div class="dsb-palms"><span>🌴</span><span>🌴</span></div>
+    <div class="dsb-palms dsb-right"><span>🌴</span><span>🌴</span></div>
+    <div class="dsb-deco dsb1">🏔️</div>
+    <div class="dsb-deco dsb2">🌊</div>
+    <div class="dsb-deco dsb3">✈️</div>
+    <div class="dsb-deco dsb4">🧭</div>
+  </div>
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-tag">Destinos Mágicos</div>
+      <h2 class="section-title">Elige tu próxima<br/><em>aventura</em></h2>
+      <p class="section-desc">Más de 500 destinos cuidadosamente seleccionados en 85 países</p>
+    </div>
+    <div class="dest-filter reveal-up">
+      <button class="filter-btn active" data-filter="all">🌍 Todos</button>
+      <button class="filter-btn" data-filter="europa">🏛️ Europa</button>
+      <button class="filter-btn" data-filter="asia">⛩️ Asia</button>
+      <button class="filter-btn" data-filter="america">🗽 América</button>
+      <button class="filter-btn" data-filter="africa">🦁 África</button>
+      <button class="filter-btn" data-filter="caribe">🌴 Caribe</button>
+      <button class="filter-btn" data-filter="oceania">🦘 Oceanía</button>
+    </div>
+
+    <div class="dest-grid" id="destGrid">
+
+      <div class="dest-card dc-featured reveal-card" data-cat="europa">
+        <div class="dest-img-zone">
+          <div class="dest-img-bg" style="position:relative;background:linear-gradient(160deg,#1a2a6e 0%,#3a5a9e 50%,#c9a84c 80%,#e05030 100%)">
+            <img src="images/image-9.png" alt="París Francia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;"/>
+            <div class="dib-label">📸 París al Atardecer — Reemplaza con foto real</div>
+            <div class="dib-icon">🗼</div>
+            <div class="dib-landscape-line"></div>
+          </div>
+          <div class="dest-img-frame-border"></div>
+        </div>
+        <div class="dest-card-overlay">
+          <div class="dest-badge-pop"><i class="fas fa-fire"></i> #1 Popular</div>
+          <div class="dest-tags-row"><span>🗼 Cultura</span><span>🍷 Gourmet</span><span>🎨 Arte</span></div>
+          <div class="dest-info-block">
+            <span class="dest-country-lbl"><i class="fas fa-map-marker-alt"></i> Francia, Europa</span>
+            <h3 class="dest-city-name">París</h3>
+            <p class="dest-city-desc">La Ciudad Luz: Torre Eiffel, Louvre, Versalles y los mejores cafés del mundo.</p>
+            <div class="dest-meta-row">
+              <span><i class="fas fa-clock"></i> 7 días</span>
+              <span><i class="fas fa-star"></i> 4.9</span>
+              <span><i class="fas fa-thermometer-half"></i> 18°C</span>
+              <span class="dest-price-tag">Desde $1,299</span>
+            </div>
+            <a href="#booking" class="dest-book-btn">Explorar <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-card reveal-card" data-cat="asia" style="--cd:0.05s">
+        <div class="dest-img-zone"><div class="dest-img-bg" style="position:relative;background:linear-gradient(160deg,#0d1b2e,#1a3a52,#c9a84c)"><img src="images/image-10.png" alt="Tokio Japón" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;"/><div class="dib-label">📸 Tokio — foto real</div><div class="dib-icon">⛩️</div></div></div>
+        <div class="dest-card-overlay">
+          <div class="dest-info-block">
+            <span class="dest-country-lbl"><i class="fas fa-map-marker-alt"></i> Japón</span>
+            <h3 class="dest-city-name">Tokio</h3>
+            <p class="dest-city-desc">Tradición y tecnología en armonía perfecta.</p>
+            <div class="dest-meta-row"><span><i class="fas fa-clock"></i> 10d</span><span class="dest-price-tag">$2,499</span></div>
+            <a href="#booking" class="dest-book-btn">Ver <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-card reveal-card" data-cat="america" style="--cd:0.1s">
+        <div class="dest-img-zone"><div class="dest-img-bg" style="position:relative;background:linear-gradient(160deg,#1a0a2e,#4a1a6e,#e8834d)"><img src="images/image-11.png" alt="Nueva York USA" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;"/><div class="dib-label">📸 NYC — foto real</div><div class="dib-icon">🗽</div></div></div>
+        <div class="dest-card-overlay">
+          <div class="dest-info-block">
+            <span class="dest-country-lbl"><i class="fas fa-map-marker-alt"></i> USA</span>
+            <h3 class="dest-city-name">Nueva York</h3>
+            <p class="dest-city-desc">La ciudad que nunca duerme.</p>
+            <div class="dest-meta-row"><span><i class="fas fa-clock"></i> 7d</span><span class="dest-price-tag">$1,599</span></div>
+            <a href="#booking" class="dest-book-btn">Ver <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-card reveal-card" data-cat="asia" style="--cd:0.15s">
+        <div class="dest-img-zone"><div class="dest-img-bg" style="position:relative;background:linear-gradient(160deg,#0a2e1a,#1a6e4a,#40b87c)"><img src="images/image-12.png" alt="Bali Indonesia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;"/><div class="dib-label">📸 Bali — foto real</div><div class="dib-icon">🏖️</div></div></div>
+        <div class="dest-card-overlay">
+          <div class="dest-info-block">
+            <span class="dest-country-lbl"><i class="fas fa-map-marker-alt"></i> Indonesia</span>
+            <h3 class="dest-city-name">Bali</h3>
+            <p class="dest-city-desc">Paraíso tropical de templos y playas.</p>
+            <div class="dest-meta-row"><span><i class="fas fa-clock"></i> 9d</span><span class="dest-price-tag">$1,899</span></div>
+            <a href="#booking" class="dest-book-btn">Ver <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-card reveal-card" data-cat="europa" style="--cd:0.2s">
+        <div class="dest-img-zone"><div class="dest-img-bg" style="position:relative;background:linear-gradient(160deg,#2e1a0a,#6e3a1a,#e8c84c)"><img src="images/image-13.png" alt="Roma Italia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;"/><div class="dib-label">📸 Roma — foto real</div><div class="dib-icon">🏛️</div></div></div>
+        <div class="dest-card-overlay">
+          <div class="dest-info-block">
+            <span class="dest-country-lbl"><i class="fas fa-map-marker-alt"></i> Italia</span>
+            <h3 class="dest-city-name">Roma</h3>
+            <p class="dest-city-desc">Eterna ciudad de arte e historia.</p>
+            <div class="dest-meta-row"><span><i class="fas fa-clock"></i> 6d</span><span class="dest-price-tag">$1,199</span></div>
+            <a href="#booking" class="dest-book-btn">Ver <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-card reveal-card" data-cat="africa" style="--cd:0.25s">
+        <div class="dest-img-zone"><div class="dest-img-bg" style="position:relative;background:linear-gradient(160deg,#2e1500,#7a3d00,#e87a1a)"><img src="images/image-14.png" alt="Safari Kenya" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;"/><div class="dib-label">📸 Kenya Safari — foto real</div><div class="dib-icon">🦁</div></div></div>
+        <div class="dest-card-overlay">
+          <div class="dest-info-block">
+            <span class="dest-country-lbl"><i class="fas fa-map-marker-alt"></i> Kenya</span>
+            <h3 class="dest-city-name">Masái Mara</h3>
+            <p class="dest-city-desc">Safari africano definitivo con los Big Five.</p>
+            <div class="dest-meta-row"><span><i class="fas fa-clock"></i> 8d</span><span class="dest-price-tag">$3,299</span></div>
+            <a href="#booking" class="dest-book-btn">Ver <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-card reveal-card" data-cat="caribe" style="--cd:0.3s">
+        <div class="dest-img-zone"><div class="dest-img-bg" style="position:relative;background:linear-gradient(160deg,#0a3a5e,#1a6a9e,#40d0f0)"><img src="images/image-15.png" alt="Maldivas" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;"/><div class="dib-label">📸 Maldivas — foto real</div><div class="dib-icon">🏝️</div></div></div>
+        <div class="dest-card-overlay">
+          <div class="dest-badge-pop new-bdg">✨ Nuevo</div>
+          <div class="dest-info-block">
+            <span class="dest-country-lbl"><i class="fas fa-map-marker-alt"></i> Maldivas</span>
+            <h3 class="dest-city-name">Maldivas</h3>
+            <p class="dest-city-desc">Bungalows sobre el agua cristalina turquesa.</p>
+            <div class="dest-meta-row"><span><i class="fas fa-clock"></i> 7d</span><span class="dest-price-tag">$3,499</span></div>
+            <a href="#booking" class="dest-book-btn">Ver <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-card reveal-card" data-cat="america" style="--cd:0.35s">
+        <div class="dest-img-zone"><div class="dest-img-bg" style="position:relative;background:linear-gradient(160deg,#0e2e1e,#1e6e3e,#5dc87e)"><img src="images/image-16.png" alt="Machu Picchu Perú" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;"/><div class="dib-label">📸 Machu Picchu — foto real</div><div class="dib-icon">🏔️</div></div></div>
+        <div class="dest-card-overlay">
+          <div class="dest-info-block">
+            <span class="dest-country-lbl"><i class="fas fa-map-marker-alt"></i> Perú</span>
+            <h3 class="dest-city-name">Machu Picchu</h3>
+            <p class="dest-city-desc">Ciudad perdida de los Incas, maravilla del mundo.</p>
+            <div class="dest-meta-row"><span><i class="fas fa-clock"></i> 8d</span><span class="dest-price-tag">$1,799</span></div>
+            <a href="#booking" class="dest-book-btn">Ver <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-card reveal-card" data-cat="oceania" style="--cd:0.4s">
+        <div class="dest-img-zone"><div class="dest-img-bg" style="position:relative;background:linear-gradient(160deg,#0a1e3e,#1a4a8e,#40b8e8)"><img src="images/image-17.png" alt="Sídney Australia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;"/><div class="dib-label">📸 Sídney — foto real</div><div class="dib-icon">🦘</div></div></div>
+        <div class="dest-card-overlay">
+          <div class="dest-info-block">
+            <span class="dest-country-lbl"><i class="fas fa-map-marker-alt"></i> Australia</span>
+            <h3 class="dest-city-name">Sídney</h3>
+            <p class="dest-city-desc">Opera House y la Gran Barrera de Coral.</p>
+            <div class="dest-meta-row"><span><i class="fas fa-clock"></i> 12d</span><span class="dest-price-tag">$2,999</span></div>
+            <a href="#booking" class="dest-book-btn">Ver <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-card reveal-card" data-cat="europa" style="--cd:0.45s">
+        <div class="dest-img-zone"><div class="dest-img-bg" style="position:relative;background:linear-gradient(160deg,#3e1a0a,#8e4a1a,#e8b060)"><img src="images/image-18.png" alt="Barcelona España" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;"/><div class="dib-label">📸 Barcelona — foto real</div><div class="dib-icon">🏙️</div></div></div>
+        <div class="dest-card-overlay">
+          <div class="dest-info-block">
+            <span class="dest-country-lbl"><i class="fas fa-map-marker-alt"></i> España</span>
+            <h3 class="dest-city-name">Barcelona</h3>
+            <p class="dest-city-desc">Gaudí, Sagrada Familia, playa y vida nocturna.</p>
+            <div class="dest-meta-row"><span><i class="fas fa-clock"></i> 7d</span><span class="dest-price-tag">$1,399</span></div>
+            <a href="#booking" class="dest-book-btn">Ver <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-card reveal-card" data-cat="caribe" style="--cd:0.5s">
+        <div class="dest-img-zone"><div class="dest-img-bg" style="position:relative;background:linear-gradient(160deg,#0a2e4e,#1a5e8e,#20d0a0)"><img src="images/image-19.png" alt="Punta Cana RD" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;"/><div class="dib-label">📸 Punta Cana — foto real</div><div class="dib-icon">🌺</div></div></div>
+        <div class="dest-card-overlay">
+          <div class="dest-badge-pop hot-bdg">🔥 Hot</div>
+          <div class="dest-info-block">
+            <span class="dest-country-lbl"><i class="fas fa-map-marker-alt"></i> Rep. Dominicana</span>
+            <h3 class="dest-city-name">Punta Cana</h3>
+            <p class="dest-city-desc">Playas de arena blanca infinita y turquesa.</p>
+            <div class="dest-meta-row"><span><i class="fas fa-clock"></i> 5d</span><span class="dest-price-tag">$899</span></div>
+            <a href="#booking" class="dest-book-btn">Ver <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-card reveal-card" data-cat="asia" style="--cd:0.55s">
+        <div class="dest-img-zone"><div class="dest-img-bg" style="position:relative;background:linear-gradient(160deg,#2e0a1e,#6e1a4e,#d080c0)"><img src="images/image-20.png" alt="Taj Mahal India" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;"/><div class="dib-label">📸 Taj Mahal — foto real</div><div class="dib-icon">🕌</div></div></div>
+        <div class="dest-card-overlay">
+          <div class="dest-info-block">
+            <span class="dest-country-lbl"><i class="fas fa-map-marker-alt"></i> India</span>
+            <h3 class="dest-city-name">Taj Mahal</h3>
+            <p class="dest-city-desc">La maravilla más romántica del mundo.</p>
+            <div class="dest-meta-row"><span><i class="fas fa-clock"></i> 10d</span><span class="dest-price-tag">$1,999</span></div>
+            <a href="#booking" class="dest-book-btn">Ver <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TOURS ══════════ -->
+<section id="tours" class="tours-section">
+  <div class="tours-scene-decos">
+    <div class="tsd-item tsd1">✈</div>
+    <div class="tsd-item tsd2">✈</div>
+    <div class="tsd-item tsd3">🌴</div>
+    <div class="tsd-item tsd4">🌴</div>
+    <div class="tsd-item tsd5">🧳</div>
+    <div class="tsd-item tsd6">🌐</div>
+    <div class="tsd-item tsd7">🧭</div>
+  </div>
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-tag">Nuestros Paquetes</div>
+      <h2 class="section-title" style="color:#fff">Tours diseñados<br/><em>para soñadores</em></h2>
+      <p class="section-desc" style="color:rgba(255,255,255,0.6)">Cada tour incluye experiencias curadas por expertos viajeros</p>
+    </div>
+
+    <div class="tours-masonry">
+
+      <div class="tour-card-v2 tcv-featured reveal-card">
+        <div class="tcv-badge">★ DESTACADO</div>
+        <!-- FRAMED IMAGE PLACEHOLDER -->
+        <div class="tcv-img-frame">
+          <div class="tcv-img-placeholder tip-europa" style="position:relative;overflow:hidden;">
+            <img src="images/image-21.png" alt="Grand Tour Europeo" style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:block;"/>
+          </div>
+          <div class="tcv-frame-gold"></div>
+          <div class="tcv-corner c-tl">◆</div>
+          <div class="tcv-corner c-tr">◆</div>
+          <div class="tcv-corner c-bl">◆</div>
+          <div class="tcv-corner c-br">◆</div>
+        </div>
+        <div class="tcv-header" style="background:linear-gradient(135deg,#0d1b3e,#1a3a7a)">
+          <div class="tcv-emoji-row"><span>🗼</span><span>🍷</span><span>🎨</span><span>🏛️</span><span>🚂</span></div>
+          <h3>Grand Tour Europeo</h3>
+          <p>París · Roma · Barcelona · Amsterdam · Praga</p>
+        </div>
+        <div class="tcv-body">
+          <div class="tcv-meta"><span><i class="fas fa-calendar"></i> 21 días</span><span><i class="fas fa-users"></i> Máx 15</span><span><i class="fas fa-star"></i> 4.9/5</span></div>
+          <ul class="tcv-includes">
+            <li><i class="fas fa-check"></i> Vuelos internacionales</li>
+            <li><i class="fas fa-check"></i> Hoteles 4-5★ seleccionados</li>
+            <li><i class="fas fa-check"></i> Desayunos y 5 cenas gourmet</li>
+            <li><i class="fas fa-check"></i> Guía bilingüe certificado</li>
+            <li><i class="fas fa-check"></i> Seguro médico completo</li>
+            <li><i class="fas fa-check"></i> Traslados aeropuerto</li>
+          </ul>
+          <div class="tcv-price-row">
+            <div><span class="tcv-from">Desde</span><span class="tcv-price">$4,899</span><span class="tcv-per">/persona</span></div>
+            <a href="#booking" class="btn-gold">Reservar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-card-v2 reveal-card" style="--cd:0.1s">
+        <div class="tcv-img-frame">
+          <div class="tcv-img-placeholder tip-japon" style="position:relative;overflow:hidden;"><img src="images/image-22.png" alt="Japón Ancestral" style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:block;"/></div>
+          <div class="tcv-frame-teal"></div>
+          <div class="tcv-corner c-tl">◆</div><div class="tcv-corner c-tr">◆</div>
+          <div class="tcv-corner c-bl">◆</div><div class="tcv-corner c-br">◆</div>
+        </div>
+        <div class="tcv-header" style="background:linear-gradient(135deg,#0d2e1e,#1a6e3e)">
+          <div class="tcv-emoji-row"><span>🌸</span><span>⛩️</span><span>🍣</span></div>
+          <h3>Japón Ancestral</h3>
+          <p>Tokio · Kioto · Osaka · Nara · Hiroshima</p>
+        </div>
+        <div class="tcv-body">
+          <div class="tcv-meta"><span><i class="fas fa-calendar"></i> 14 días</span><span><i class="fas fa-star"></i> 5.0/5</span></div>
+          <ul class="tcv-includes">
+            <li><i class="fas fa-check"></i> Vuelos incluidos</li>
+            <li><i class="fas fa-check"></i> Ryokans tradicionales</li>
+            <li><i class="fas fa-check"></i> Ceremonia del té incluida</li>
+            <li><i class="fas fa-check"></i> JR Pass nacional</li>
+          </ul>
+          <div class="tcv-price-row">
+            <div><span class="tcv-from">Desde</span><span class="tcv-price">$3,499</span></div>
+            <a href="#booking" class="btn-gold">Reservar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-card-v2 reveal-card" style="--cd:0.2s">
+        <div class="tcv-img-frame">
+          <div class="tcv-img-placeholder tip-africa" style="position:relative;overflow:hidden;"><img src="images/image-23.png" alt="Safari África" style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:block;"/></div>
+          <div class="tcv-frame-coral"></div>
+          <div class="tcv-corner c-tl">◆</div><div class="tcv-corner c-tr">◆</div>
+          <div class="tcv-corner c-bl">◆</div><div class="tcv-corner c-br">◆</div>
+        </div>
+        <div class="tcv-header" style="background:linear-gradient(135deg,#2e1500,#8b4513)">
+          <div class="tcv-emoji-row"><span>🦁</span><span>🌅</span><span>🐘</span></div>
+          <h3>Safari África Mágico</h3>
+          <p>Kenya · Tanzania · Zanzíbar</p>
+        </div>
+        <div class="tcv-body">
+          <div class="tcv-meta"><span><i class="fas fa-calendar"></i> 12 días</span><span><i class="fas fa-star"></i> 4.8/5</span></div>
+          <ul class="tcv-includes">
+            <li><i class="fas fa-check"></i> Vuelos incluidos</li>
+            <li><i class="fas fa-check"></i> Lodges de lujo</li>
+            <li><i class="fas fa-check"></i> Safaris diarios guiados</li>
+          </ul>
+          <div class="tcv-price-row">
+            <div><span class="tcv-from">Desde</span><span class="tcv-price">$5,299</span></div>
+            <a href="#booking" class="btn-gold">Reservar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-card-v2 reveal-card" style="--cd:0.3s">
+        <div class="tcv-img-frame">
+          <div class="tcv-img-placeholder tip-caribe" style="position:relative;overflow:hidden;"><img src="images/image-24.png" alt="Paraíso Tropical" style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:block;"/></div>
+          <div class="tcv-frame-blue"></div>
+          <div class="tcv-corner c-tl">◆</div><div class="tcv-corner c-tr">◆</div>
+          <div class="tcv-corner c-bl">◆</div><div class="tcv-corner c-br">◆</div>
+        </div>
+        <div class="tcv-header" style="background:linear-gradient(135deg,#0a1a3e,#1a3a6e)">
+          <div class="tcv-emoji-row"><span>🏖️</span><span>🌴</span><span>🐠</span></div>
+          <h3>Paraíso Tropical</h3>
+          <p>Maldivas · Bali · Tailandia · Filipinas</p>
+        </div>
+        <div class="tcv-body">
+          <div class="tcv-meta"><span><i class="fas fa-calendar"></i> 14 días</span><span><i class="fas fa-star"></i> 4.9/5</span></div>
+          <ul class="tcv-includes">
+            <li><i class="fas fa-check"></i> Vuelos incluidos</li>
+            <li><i class="fas fa-check"></i> Over-water bungalow</li>
+            <li><i class="fas fa-check"></i> Todo incluido premium</li>
+          </ul>
+          <div class="tcv-price-row">
+            <div><span class="tcv-from">Desde</span><span class="tcv-price">$3,899</span></div>
+            <a href="#booking" class="btn-gold">Reservar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-card-v2 reveal-card" style="--cd:0.4s">
+        <div class="tcv-img-frame">
+          <div class="tcv-img-placeholder tip-seda" style="position:relative;overflow:hidden;"><img src="images/image-25.png" alt="Ruta de la Seda" style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:block;"/></div>
+          <div class="tcv-frame-gold"></div>
+          <div class="tcv-corner c-tl">◆</div><div class="tcv-corner c-tr">◆</div>
+          <div class="tcv-corner c-bl">◆</div><div class="tcv-corner c-br">◆</div>
+        </div>
+        <div class="tcv-header" style="background:linear-gradient(135deg,#2e1a00,#6e4500)">
+          <div class="tcv-emoji-row"><span>🕌</span><span>🐪</span><span>⭐</span></div>
+          <h3>Ruta de la Seda</h3>
+          <p>Uzbekistán · Azerbaiyán · Georgia · Turquía</p>
+        </div>
+        <div class="tcv-body">
+          <div class="tcv-meta"><span><i class="fas fa-calendar"></i> 18 días</span><span><i class="fas fa-star"></i> 4.7/5</span></div>
+          <ul class="tcv-includes">
+            <li><i class="fas fa-check"></i> Vuelos incluidos</li>
+            <li><i class="fas fa-check"></i> Riads y palacios históricos</li>
+            <li><i class="fas fa-check"></i> Paseo en camello</li>
+          </ul>
+          <div class="tcv-price-row">
+            <div><span class="tcv-from">Desde</span><span class="tcv-price">$4,299</span></div>
+            <a href="#booking" class="btn-gold">Reservar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-card-v2 reveal-card" style="--cd:0.5s">
+        <div class="tcv-img-frame">
+          <div class="tcv-img-placeholder tip-patagonia" style="position:relative;overflow:hidden;"><img src="images/image-26.png" alt="Patagonia Extrema" style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:block;"/></div>
+          <div class="tcv-frame-teal"></div>
+          <div class="tcv-corner c-tl">◆</div><div class="tcv-corner c-tr">◆</div>
+          <div class="tcv-corner c-bl">◆</div><div class="tcv-corner c-br">◆</div>
+        </div>
+        <div class="tcv-header" style="background:linear-gradient(135deg,#0a1e3e,#1a4e7e)">
+          <div class="tcv-emoji-row"><span>🏔️</span><span>🦅</span><span>🧊</span></div>
+          <h3>Patagonia Extrema</h3>
+          <p>Chile · Argentina · Torres del Paine</p>
+        </div>
+        <div class="tcv-body">
+          <div class="tcv-meta"><span><i class="fas fa-calendar"></i> 15 días</span><span><i class="fas fa-star"></i> 4.9/5</span></div>
+          <ul class="tcv-includes">
+            <li><i class="fas fa-check"></i> Vuelos incluidos</li>
+            <li><i class="fas fa-check"></i> Lodges boutique</li>
+            <li><i class="fas fa-check"></i> Trekking guiado</li>
+          </ul>
+          <div class="tcv-price-row">
+            <div><span class="tcv-from">Desde</span><span class="tcv-price">$4,599</span></div>
+            <a href="#booking" class="btn-gold">Reservar</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ GALLERY ══════════ -->
+<section id="gallery" class="gallery-section">
+  <div class="gallery-floating-decos">
+    <div class="gfd gfd1">🌴</div>
+    <div class="gfd gfd2">✈️</div>
+    <div class="gfd gfd3">🧳</div>
+    <div class="gfd gfd4">🌴</div>
+    <div class="gfd gfd5">🕶️</div>
+    <div class="gfd gfd6">🏄</div>
+    <div class="gfd gfd7">🌊</div>
+  </div>
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-tag">Momentos Mágicos</div>
+      <h2 class="section-title">Nuestra <em>galería</em><br/>de aventuras</h2>
+    </div>
+  </div>
+  <div class="carousel-wrap">
+    <div class="carousel-track-v2" id="carouselTrack">
+
+      <div class="cs-v2">
+        <div class="cs-img-ph cs-ph1" style="position:relative;"><img src="images/image-27.png" alt="Santorini Grecia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/><div class="cs-ph-top" style="position:relative;z-index:2;">🌅</div><div class="cs-ph-label" style="position:relative;z-index:2;">📸 Santorini al Amanecer</div></div>
+        <div class="cs-deco-frame"></div>
+        <div class="cs-overlay-v2"><span>Santorini</span><em>Grecia ✨</em></div>
+      </div>
+      <div class="cs-v2">
+        <div class="cs-img-ph cs-ph2" style="position:relative;"><img src="images/image-28.png" alt="Kioto Japón" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/><div class="cs-ph-top" style="position:relative;z-index:2;">⛩️</div><div class="cs-ph-label" style="position:relative;z-index:2;">📸 Kioto Ancestral</div></div>
+        <div class="cs-deco-frame"></div>
+        <div class="cs-overlay-v2"><span>Kioto</span><em>Japón 🌸</em></div>
+      </div>
+      <div class="cs-v2">
+        <div class="cs-img-ph cs-ph3" style="position:relative;"><img src="images/image-29.png" alt="Machu Picchu Perú" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/><div class="cs-ph-top" style="position:relative;z-index:2;">🏔️</div><div class="cs-ph-label" style="position:relative;z-index:2;">📸 Machu Picchu</div></div>
+        <div class="cs-deco-frame"></div>
+        <div class="cs-overlay-v2"><span>Machu Picchu</span><em>Perú 🌿</em></div>
+      </div>
+      <div class="cs-v2">
+        <div class="cs-img-ph cs-ph4" style="position:relative;"><img src="images/image-30.png" alt="Safari Africano" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/><div class="cs-ph-top" style="position:relative;z-index:2;">🦁</div><div class="cs-ph-label" style="position:relative;z-index:2;">📸 Safari Africano</div></div>
+        <div class="cs-deco-frame"></div>
+        <div class="cs-overlay-v2"><span>Safari</span><em>Kenya 🌍</em></div>
+      </div>
+      <div class="cs-v2">
+        <div class="cs-img-ph cs-ph5" style="position:relative;"><img src="images/image-31.png" alt="Maldivas" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/><div class="cs-ph-top" style="position:relative;z-index:2;">🏖️</div><div class="cs-ph-label" style="position:relative;z-index:2;">📸 Maldivas Paradise</div></div>
+        <div class="cs-deco-frame"></div>
+        <div class="cs-overlay-v2"><span>Maldivas</span><em>🐠 Paraíso</em></div>
+      </div>
+      <div class="cs-v2">
+        <div class="cs-img-ph cs-ph6" style="position:relative;"><img src="images/image-32.png" alt="Nueva York" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/><div class="cs-ph-top" style="position:relative;z-index:2;">🗽</div><div class="cs-ph-label" style="position:relative;z-index:2;">📸 Manhattan de Noche</div></div>
+        <div class="cs-deco-frame"></div>
+        <div class="cs-overlay-v2"><span>New York</span><em>USA 🌃</em></div>
+      </div>
+      <div class="cs-v2">
+        <div class="cs-img-ph cs-ph7" style="position:relative;"><img src="images/image-33.png" alt="Punta Cana" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/><div class="cs-ph-top" style="position:relative;z-index:2;">🌺</div><div class="cs-ph-label" style="position:relative;z-index:2;">📸 Punta Cana</div></div>
+        <div class="cs-deco-frame"></div>
+        <div class="cs-overlay-v2"><span>Punta Cana</span><em>RD 🌊</em></div>
+      </div>
+      <div class="cs-v2">
+        <div class="cs-img-ph cs-ph8" style="position:relative;"><img src="images/image-34.png" alt="Estambul Turquía" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/><div class="cs-ph-top" style="position:relative;z-index:2;">🕌</div><div class="cs-ph-label" style="position:relative;z-index:2;">📸 Estambul Dorado</div></div>
+        <div class="cs-deco-frame"></div>
+        <div class="cs-overlay-v2"><span>Estambul</span><em>Turquía 🌙</em></div>
+      </div>
+      <!-- Loop copies -->
+      <div class="cs-v2"><div class="cs-img-ph cs-ph1" style="position:relative;"><img src="images/image-27.png" alt="Santorini" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/><div class="cs-ph-top" style="position:relative;z-index:2;">🌅</div><div class="cs-ph-label" style="position:relative;z-index:2;">📸 Santorini</div></div><div class="cs-overlay-v2"><span>Santorini</span><em>Grecia ✨</em></div></div>
+      <div class="cs-v2"><div class="cs-img-ph cs-ph2" style="position:relative;"><img src="images/image-28.png" alt="Kioto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/><div class="cs-ph-top" style="position:relative;z-index:2;">⛩️</div><div class="cs-ph-label" style="position:relative;z-index:2;">📸 Kioto</div></div><div class="cs-overlay-v2"><span>Kioto</span><em>Japón 🌸</em></div></div>
+
+    </div>
+    <button class="cs-btn-v2 cs-prev" id="carouselPrev"><i class="fas fa-chevron-left"></i></button>
+    <button class="cs-btn-v2 cs-next" id="carouselNext"><i class="fas fa-chevron-right"></i></button>
+    <div class="cs-dots" id="carouselDots"></div>
+  </div>
+</section>
+
+<!-- ══════════ EXPERIENCES ══════════ -->
+<section id="experiences" class="experiences-section">
+  <div class="exp-bg-items">
+    <div class="ebi ebi1">🧳</div><div class="ebi ebi2">🌴</div><div class="ebi ebi3">🗺️</div><div class="ebi ebi4">✈️</div>
+  </div>
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-tag">Más que un Viaje</div>
+      <h2 class="section-title">Experiencias que<br/><em>transforman</em></h2>
+    </div>
+    <div class="exp-grid-v2">
+
+      <div class="exp-card-v2 reveal-card" onclick="openExperience('gastronomia')">
+        <div class="ecv-icon"><i class="fas fa-utensils"></i></div>
+        <h3>Turismo Gastronómico</h3>
+        <p>Recorre restaurantes Michelin y mercados locales con tours culinarios exclusivos en 20 países.</p>
+        <div class="ecv-price-preview">Desde <strong>$899</strong> / persona</div>
+        <div class="ecv-cta">Descubrir Plan Completo <i class="fas fa-chevron-right"></i></div>
+        <div class="ecv-hover-glow"></div>
+      </div>
+
+      <div class="exp-card-v2 reveal-card" onclick="openExperience('aventura')" style="--cd:0.1s">
+        <div class="ecv-icon"><i class="fas fa-mountain"></i></div>
+        <h3>Aventura Extrema</h3>
+        <p>Trekkings de alta montaña, buceo en arrecifes vírgenes y paracaidismo sobre paisajes únicos.</p>
+        <div class="ecv-price-preview">Desde <strong>$1,299</strong> / persona</div>
+        <div class="ecv-cta">Descubrir Plan Completo <i class="fas fa-chevron-right"></i></div>
+        <div class="ecv-hover-glow"></div>
+      </div>
+
+      <div class="exp-card-v2 reveal-card" onclick="openExperience('wellness')" style="--cd:0.2s">
+        <div class="ecv-icon"><i class="fas fa-spa"></i></div>
+        <h3>Wellness & Retiros</h3>
+        <p>Yoga en Bali, spas de lujo en el Himalaya y tratamientos ancestrales alrededor del mundo.</p>
+        <div class="ecv-price-preview">Desde <strong>$1,499</strong> / persona</div>
+        <div class="ecv-cta">Descubrir Plan Completo <i class="fas fa-chevron-right"></i></div>
+        <div class="ecv-hover-glow"></div>
+      </div>
+
+      <div class="exp-card-v2 reveal-card" onclick="openExperience('fotografia')" style="--cd:0.3s">
+        <div class="ecv-icon"><i class="fas fa-camera"></i></div>
+        <h3>Fotografía & Arte</h3>
+        <p>Tours fotográficos con artistas locales. Captura la esencia de cada cultura con expertos.</p>
+        <div class="ecv-price-preview">Desde <strong>$799</strong> / persona</div>
+        <div class="ecv-cta">Descubrir Plan Completo <i class="fas fa-chevron-right"></i></div>
+        <div class="ecv-hover-glow"></div>
+      </div>
+
+      <div class="exp-card-v2 reveal-card" onclick="openExperience('luna_miel')" style="--cd:0.4s">
+        <div class="ecv-icon"><i class="fas fa-ring"></i></div>
+        <h3>Luna de Miel</h3>
+        <p>Diseñamos el viaje romántico perfecto: villas privadas, bungalows sobre el agua y cenas bajo las estrellas.</p>
+        <div class="ecv-price-preview">Desde <strong>$2,499</strong> / pareja</div>
+        <div class="ecv-cta">Descubrir Plan Completo <i class="fas fa-chevron-right"></i></div>
+        <div class="ecv-hover-glow"></div>
+      </div>
+
+      <div class="exp-card-v2 reveal-card" onclick="openExperience('familia')" style="--cd:0.5s">
+        <div class="ecv-icon"><i class="fas fa-child"></i></div>
+        <h3>Viajes Familiares</h3>
+        <p>Aventuras diseñadas para toda la familia con actividades para niños y adultos en los mejores destinos.</p>
+        <div class="ecv-price-preview">Desde <strong>$3,299</strong> / familia 4</div>
+        <div class="ecv-cta">Descubrir Plan Completo <i class="fas fa-chevron-right"></i></div>
+        <div class="ecv-hover-glow"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ WORLD MAP ══════════ -->
+<section id="worldmap" class="worldmap-section">
+  <div class="wm-bg-grid"></div>
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-tag">Cobertura Global</div>
+      <h2 class="section-title" style="color:#fff">Llegamos a <em>todo</em><br/>el mundo</h2>
+    </div>
+    <div class="wm-layout reveal-up">
+      <div class="globe-wrap">
+        <div class="globe-ring gr1"></div>
+        <div class="globe-ring gr2"></div>
+        <div class="globe-ring gr3"></div>
+        <div class="globe-core"><span class="globe-emoji-big">🌍</span></div>
+        <div class="orb-pin op1"><i class="fas fa-map-pin"></i><span>Europa</span></div>
+        <div class="orb-pin op2"><i class="fas fa-map-pin"></i><span>Asia</span></div>
+        <div class="orb-pin op3"><i class="fas fa-map-pin"></i><span>América</span></div>
+        <div class="orb-pin op4"><i class="fas fa-map-pin"></i><span>África</span></div>
+        <div class="orb-pin op5"><i class="fas fa-map-pin"></i><span>Oceanía</span></div>
+      </div>
+      <div class="wm-stats">
+        <div class="wms-item"><span class="wms-num">85+</span><span class="wms-lbl">Países</span></div>
+        <div class="wms-item"><span class="wms-num">500+</span><span class="wms-lbl">Destinos</span></div>
+        <div class="wms-item"><span class="wms-num">200+</span><span class="wms-lbl">Aerolíneas</span></div>
+        <div class="wms-item"><span class="wms-num">2000+</span><span class="wms-lbl">Hoteles</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TESTIMONIALS ══════════ -->
+<section id="testimonials" class="testimonials-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-tag">Lo que dicen</div>
+      <h2 class="section-title">Voces de nuestros<br/><em>viajeros</em></h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card test-large reveal-card"><div class="tq">"</div><p>Aurora Voyages transformó completamente mi idea de lo que puede ser un viaje. El Grand Tour Europeo fue simplemente perfecto. Cada detalle estaba cuidado al milímetro.</p><div class="ta"><div class="ta-avatar"><i class="fas fa-user-circle"></i></div><div><strong>María González</strong><span>Santo Domingo, RD</span></div><div class="ta-stars">★★★★★</div></div><div class="ta-trip"><i class="fas fa-plane"></i> Grand Tour Europeo</div></div>
+      <div class="test-card reveal-card" style="--cd:0.1s"><div class="tq">"</div><p>El safari en África fue la experiencia de mi vida. Ver a los leones en su hábitat natural... absolutamente inolvidable.</p><div class="ta"><div class="ta-avatar"><i class="fas fa-user-circle"></i></div><div><strong>Carlos Méndez</strong><span>Ciudad de México</span></div><div class="ta-stars">★★★★★</div></div></div>
+      <div class="test-card reveal-card" style="--cd:0.2s"><div class="tq">"</div><p>Nuestra luna de miel en Maldivas fue un sueño hecho realidad. La villa sobre el agua, los atardeceres... Aurora Voyages creó algo verdaderamente mágico.</p><div class="ta"><div class="ta-avatar"><i class="fas fa-user-circle"></i></div><div><strong>Ana & Roberto</strong><span>Bogotá, Colombia</span></div><div class="ta-stars">★★★★★</div></div></div>
+      <div class="test-card reveal-card" style="--cd:0.3s"><div class="tq">"</div><p>Japón Ancestral fue una experiencia espiritual. Los templos de Kioto, la ceremonia del té... es un viaje que recomiendo a todos sin excepción.</p><div class="ta"><div class="ta-avatar"><i class="fas fa-user-circle"></i></div><div><strong>Lucía Torres</strong><span>Buenos Aires</span></div><div class="ta-stars">★★★★★</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BOOKING ══════════ -->
+<section id="booking" class="booking-section">
+  <div class="booking-bg-layer"></div>
+  <div class="booking-deco-items">
+    <div class="bdi bdi1">🌴</div><div class="bdi bdi2">✈️</div>
+    <div class="bdi bdi3">🧳</div><div class="bdi bdi4">🌴</div>
+    <div class="bdi bdi5">🏝️</div>
+  </div>
+  <div class="container">
+    <div class="booking-layout">
+      <div class="booking-left reveal-slide">
+        <div class="section-tag">Reserva Ahora</div>
+        <h2 class="section-title" style="color:#fff">Tu aventura<br/><em>comienza aquí</em></h2>
+        <p style="color:rgba(255,255,255,0.75);margin-bottom:2rem;">Confirmaremos tu reserva en menos de 24 horas con todos los detalles de tu viaje perfecto.</p>
+        <div class="bk-promises">
+          <div class="bkp"><i class="fas fa-shield-alt"></i><span>Reserva 100% segura y encriptada</span></div>
+          <div class="bkp"><i class="fas fa-undo"></i><span>Cancelación gratuita hasta 30 días</span></div>
+          <div class="bkp"><i class="fas fa-headset"></i><span>Asistencia 24/7 durante el viaje</span></div>
+          <div class="bkp"><i class="fas fa-tag"></i><span>Mejor precio garantizado</span></div>
+        </div>
+      </div>
+      <div class="booking-right reveal-card">
+        <form class="bk-form" id="bookingForm" onsubmit="handleBooking(event)">
+          <div class="bk-form-title"><i class="fas fa-suitcase"></i> Planifica tu viaje</div>
+          <div class="bk-row">
+            <div class="bk-field"><label>Nombre completo *</label><input type="text" id="bkName" placeholder="Tu nombre" required/></div>
+            <div class="bk-field"><label>Email *</label><input type="email" id="bkEmail" placeholder="tu@email.com" required/></div>
+          </div>
+          <div class="bk-row">
+            <div class="bk-field"><label>Teléfono / WhatsApp</label><input type="tel" id="bkPhone" placeholder="+1 (809) 000-0000"/></div>
+            <div class="bk-field"><label>Destino *</label>
+              <select id="bkDest" required>
+                <option value="">Seleccionar</option>
+                <option>París, Francia</option><option>Tokio, Japón</option>
+                <option>Safari Kenya</option><option>Maldivas</option>
+                <option>Machu Picchu, Perú</option><option>Sídney, Australia</option>
+                <option>Nueva York, USA</option><option>Roma, Italia</option>
+                <option>Barcelona, España</option><option>Bali, Indonesia</option>
+                <option>Punta Cana, RD</option><option>Santorini, Grecia</option>
+                <option>Ruta de la Seda</option><option>Patagonia</option>
+                <option>Otro destino</option>
+              </select>
+            </div>
+          </div>
+          <div class="bk-row">
+            <div class="bk-field"><label>Fecha de salida *</label><input type="date" id="bkDate" required/></div>
+            <div class="bk-field"><label>Viajeros</label>
+              <select id="bkTravelers">
+                <option>1 persona</option><option>2 personas</option>
+                <option>3-5 personas</option><option>6-10 personas</option><option>Grupo</option>
+              </select>
+            </div>
+          </div>
+          <div class="bk-field"><label>Presupuesto</label>
+            <select id="bkBudget">
+              <option>$500 - $1,500 USD</option><option>$1,500 - $3,000 USD</option>
+              <option>$3,000 - $5,000 USD</option><option>$5,000 - $10,000 USD</option><option>Sin límite</option>
+            </select>
+          </div>
+          <div class="bk-field"><label>Tu sueño de viaje</label><textarea id="bkNotes" placeholder="¿Qué experiencia buscas? ¿Hay algo especial que celebrar?..." rows="3"></textarea></div>
+          <div class="bk-checkbox"><input type="checkbox" id="bkTerms" required/><label for="bkTerms">Acepto los <a href="#" onclick="openTerms()" style="color:var(--gold)">términos</a> y <a href="#" onclick="openPrivacy()" style="color:var(--gold)">privacidad</a></label></div>
+          <button type="submit" class="btn-gold full"><i class="fas fa-paper-plane"></i> Confirmar mi Reserva</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BLOG ══════════ -->
+<section id="blog" class="blog-section">
+  <div class="blog-deco-items">
+    <div class="bli bli1">📰</div><div class="bli bli2">✈️</div><div class="bli bli3">🌍</div>
+  </div>
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-tag">Inspiración de Viaje</div>
+      <h2 class="section-title">Lee, sueña<br/><em>y planifica</em></h2>
+    </div>
+    <div class="blog-grid-v2">
+
+      <div class="blog-card-v2 bcv-large reveal-card" onclick="openArticle('paris')">
+        <div class="bcv-img">
+          <div class="bcv-img-ph bcvph1" style="position:relative;"><img src="images/image-35.png" alt="Secretos de París" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/><div class="bcv-ph-icon" style="position:relative;z-index:2;">🗼</div><div class="bcv-ph-label" style="position:relative;z-index:2;">📸 Foto: Secretos de París</div></div>
+          <div class="bcv-cat">Destinos</div>
+        </div>
+        <div class="bcv-body">
+          <div class="bcv-meta"><span><i class="fas fa-calendar"></i> 15 May 2025</span><span><i class="fas fa-clock"></i> 8 min</span><span><i class="fas fa-eye"></i> 4,231</span></div>
+          <h3>Los 10 secretos de París que solo los locales conocen</h3>
+          <p>Más allá de la Torre Eiffel, la Ciudad Luz guarda tesoros escondidos que harán tu visita verdaderamente única...</p>
+          <button class="bcv-read-btn">Leer Artículo Completo <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="blog-card-v2 reveal-card" onclick="openArticle('japon')" style="--cd:0.1s">
+        <div class="bcv-img"><div class="bcv-img-ph bcvph2" style="position:relative;"><img src="images/image-36.png" alt="Festival Hanami Japón" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/><div class="bcv-ph-icon" style="position:relative;z-index:2;">🌸</div><div class="bcv-ph-label" style="position:relative;z-index:2;">📸 Hanami</div></div><div class="bcv-cat">Cultura</div></div>
+        <div class="bcv-body">
+          <div class="bcv-meta"><span><i class="fas fa-calendar"></i> 10 Abr 2025</span><span><i class="fas fa-clock"></i> 6 min</span></div>
+          <h3>Guía completa del festival Hanami en Japón</h3>
+          <p>Todo para ver los cerezos en flor...</p>
+          <button class="bcv-read-btn">Leer <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="blog-card-v2 reveal-card" onclick="openArticle('safari')" style="--cd:0.2s">
+        <div class="bcv-img"><div class="bcv-img-ph bcvph3" style="position:relative;"><img src="images/image-37.png" alt="Safari en África" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/><div class="bcv-ph-icon" style="position:relative;z-index:2;">🦁</div><div class="bcv-ph-label" style="position:relative;z-index:2;">📸 Safari</div></div><div class="bcv-cat">Aventura</div></div>
+        <div class="bcv-body">
+          <div class="bcv-meta"><span><i class="fas fa-calendar"></i> 5 Abr 2025</span><span><i class="fas fa-clock"></i> 10 min</span></div>
+          <h3>Todo sobre tu primer Safari en África</h3>
+          <p>Equipamiento, temporadas y consejos de expertos...</p>
+          <button class="bcv-read-btn">Leer <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="blog-card-v2 reveal-card" onclick="openArticle('maldivas')" style="--cd:0.3s">
+        <div class="bcv-img"><div class="bcv-img-ph bcvph4" style="position:relative;"><img src="images/image-38.png" alt="Maldivas Paraíso" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/><div class="bcv-ph-icon" style="position:relative;z-index:2;">🏝️</div><div class="bcv-ph-label" style="position:relative;z-index:2;">📸 Maldivas</div></div><div class="bcv-cat">Lujo</div></div>
+        <div class="bcv-body">
+          <div class="bcv-meta"><span><i class="fas fa-calendar"></i> 1 Abr 2025</span><span><i class="fas fa-clock"></i> 7 min</span></div>
+          <h3>Maldivas: la guía definitiva del paraíso</h3>
+          <p>Cómo elegir tu resort, qué hacer y cuándo ir...</p>
+          <button class="bcv-read-btn">Leer <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="blog-card-v2 reveal-card" onclick="openArticle('packing')" style="--cd:0.4s">
+        <div class="bcv-img"><div class="bcv-img-ph bcvph5" style="position:relative;"><img src="images/image-39.png" alt="Guía de Equipaje" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/><div class="bcv-ph-icon" style="position:relative;z-index:2;">🧳</div><div class="bcv-ph-label" style="position:relative;z-index:2;">📸 Maleta lista</div></div><div class="bcv-cat">Tips</div></div>
+        <div class="bcv-body">
+          <div class="bcv-meta"><span><i class="fas fa-calendar"></i> 25 Mar 2025</span><span><i class="fas fa-clock"></i> 5 min</span></div>
+          <h3>El arte de empacar: guía maestra</h3>
+          <p>Trucos de expertos para viajar ligero...</p>
+          <button class="bcv-read-btn">Leer <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="blog-card-v2 reveal-card" onclick="openArticle('patagonia')" style="--cd:0.5s">
+        <div class="bcv-img"><div class="bcv-img-ph bcvph6" style="position:relative;"><img src="images/image-40.png" alt="Patagonia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/><div class="bcv-ph-icon" style="position:relative;z-index:2;">🏔️</div><div class="bcv-ph-label" style="position:relative;z-index:2;">📸 Patagonia</div></div><div class="bcv-cat">Extremo</div></div>
+        <div class="bcv-body">
+          <div class="bcv-meta"><span><i class="fas fa-calendar"></i> 20 Mar 2025</span><span><i class="fas fa-clock"></i> 9 min</span></div>
+          <h3>Patagonia: fin del mundo, principio de todo</h3>
+          <p>El viaje más espectacular del hemisferio sur...</p>
+          <button class="bcv-read-btn">Leer <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-tag">Estamos aquí</div>
+      <h2 class="section-title">Hablemos de<br/><em>tu próximo viaje</em></h2>
+    </div>
+    <div class="contact-grid-v2">
+      <div class="ctc-card reveal-card"><div class="ctc-icon"><i class="fas fa-phone-alt"></i></div><h4>Llámanos</h4><p>+1 (809) 555-AURORA</p><p>+1 (809) 555-VIAJE</p><a href="tel:+18095550000" class="ctc-action">Llamar ahora</a></div>
+      <div class="ctc-card reveal-card" style="--cd:0.1s"><div class="ctc-icon"><i class="fas fa-envelope"></i></div><h4>Email</h4><p>hola@auroravoyages.com</p><p>reservas@auroravoyages.com</p><a href="mailto:hola@auroravoyages.com" class="ctc-action">Enviar email</a></div>
+      <div class="ctc-card reveal-card" style="--cd:0.2s"><div class="ctc-icon"><i class="fab fa-whatsapp"></i></div><h4>WhatsApp</h4><p>+1 (809) 555-0000</p><p>Respuesta inmediata</p><a href="https://wa.me/18095550000" target="_blank" class="ctc-action">Abrir WhatsApp</a></div>
+      <div class="ctc-card reveal-card" style="--cd:0.3s"><div class="ctc-icon"><i class="fas fa-map-marker-alt"></i></div><h4>Visítanos</h4><p>Av. Abraham Lincoln #350</p><p>Santo Domingo, RD</p><a href="https://maps.google.com" target="_blank" class="ctc-action">Ver en Mapa</a></div>
+    </div>
+    <div class="social-strip reveal-up">
+      <span>Síguenos en redes:</span>
+      <a href="https://instagram.com" target="_blank" class="ss-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com" target="_blank" class="ss-link" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://youtube.com" target="_blank" class="ss-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://tiktok.com" target="_blank" class="ss-link" title="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://pinterest.com" target="_blank" class="ss-link" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+      <a href="https://twitter.com" target="_blank" class="ss-link" title="X/Twitter"><i class="fab fa-x-twitter"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="footer-wave-top">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#0a0f1e"/>
+    </svg>
+  </div>
+  <div class="footer-floating-decos">
+    <span class="ffd">✈</span><span class="ffd">🌴</span><span class="ffd">✦</span>
+    <span class="ffd">🌍</span><span class="ffd">✈</span><span class="ffd">🧳</span><span class="ffd">🧭</span>
+  </div>
+  <div class="footer-main-content">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="fc-brand">
+          <div class="fc-logo"><span class="logo-main">AURORA</span><span class="logo-sub-text">VOYAGES</span></div>
+          <p>La agencia de viajes más premiada del Caribe. 15 años creando experiencias extraordinarias en 85 países.</p>
+          <div class="fc-cert"><i class="fas fa-award"></i><span>Certificada IATA • ISO 9001</span></div>
+          <div class="fc-socials">
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="fc-links">
+          <h5>Destinos</h5>
+          <ul>
+            <li><a href="#destinations">Europa</a></li>
+            <li><a href="#destinations">Asia & Pacífico</a></li>
+            <li><a href="#destinations">Américas</a></li>
+            <li><a href="#destinations">África</a></li>
+            <li><a href="#destinations">Caribe</a></li>
+            <li><a href="#destinations">Oceanía</a></li>
+          </ul>
+        </div>
+        <div class="fc-links">
+          <h5>Servicios</h5>
+          <ul>
+            <li><a href="#tours">Tours Grupales</a></li>
+            <li><a href="#tours">Viajes Privados</a></li>
+            <li><a href="#experiences">Luna de Miel</a></li>
+            <li><a href="#experiences">Corporativo</a></li>
+            <li><a href="#experiences">Turismo Aventura</a></li>
+            <li><a href="#booking">Seguro de Viaje</a></li>
+          </ul>
+        </div>
+        <div class="fc-links">
+          <h5>Compañía</h5>
+          <ul>
+            <li><a href="#about">Sobre Nosotros</a></li>
+            <li><a href="#blog">Blog de Viajes</a></li>
+            <li><a href="#contact">Contáctanos</a></li>
+            <li><a href="#" onclick="openPrivacy();return false">Privacidad</a></li>
+            <li><a href="#" onclick="openTerms();return false">Términos</a></li>
+            <li><a href="#" onclick="openCookies();return false">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="fc-newsletter">
+          <h5>Newsletter</h5>
+          <p>Suscríbete y recibe ofertas exclusivas y destinos secretos cada semana.</p>
+          <form class="nl-form" onsubmit="handleNewsletter(event)">
+            <input type="email" placeholder="tu@email.com" required/>
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+          <div class="fc-payment">
+            <span>Pagos seguros:</span>
+            <div class="pay-icons-row">
+              <span>💳 Visa</span><span>💳 MC</span><span>💳 PayPal</span><span>💳 Amex</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom-bar">
+    <div class="container">
+      <div class="fbb-inner">
+        <p>© 2025 Aurora Voyages S.R.L. — Todos los derechos reservados. Hecho con ❤️ para los amantes del mundo.</p>
+        <div class="fbb-links">
+          <a href="#" onclick="openPrivacy();return false">Privacidad</a>
+          <a href="#" onclick="openTerms();return false">Términos</a>
+          <a href="#" onclick="openCookies();return false">Cookies</a>
+          <a href="#contact">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="scroll-top-btn" id="scrollTop"><i class="fas fa-compass"></i></button>
+</footer>
+
+<!-- ══════════ ALL MODALS ══════════ -->
+
+<!-- Booking success -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal-box">
+    <div class="modal-big-icon">✈️</div>
+    <h3>¡Reserva Confirmada!</h3>
+    <div class="modal-bk-detail" id="modalBkDetail"></div>
+    <p>Recibirás la confirmación en tu email. Nuestro equipo te contactará en 2-4 horas hábiles para finalizar los detalles.</p>
+    <div class="modal-ref-num">Ref: <strong id="bookingRef"></strong></div>
+    <button class="btn-gold" onclick="closeModal('successModal')">¡Perfecto!</button>
+  </div>
+</div>
+
+<!-- Experience modal -->
+<div class="modal-overlay" id="expModal">
+  <div class="modal-box modal-xl">
+    <button class="modal-x" onclick="closeModal('expModal')"><i class="fas fa-times"></i></button>
+    <div id="expModalContent"></div>
+  </div>
+</div>
+
+<!-- Article modal -->
+<div class="modal-overlay" id="articleModal">
+  <div class="modal-box modal-xl">
+    <button class="modal-x" onclick="closeModal('articleModal')"><i class="fas fa-times"></i></button>
+    <div id="articleContent"></div>
+  </div>
+</div>
+
+<!-- Privacy -->
+<div class="modal-overlay" id="privacyModal">
+  <div class="modal-box modal-xl">
+    <button class="modal-x" onclick="closeModal('privacyModal')"><i class="fas fa-times"></i></button>
+    <h3>🔒 Política de Privacidad</h3>
+    <div class="legal-text">
+      <p><strong>Aurora Voyages S.R.L.</strong> se compromete a proteger tu privacidad.</p>
+      <h4>Datos recopilados</h4><p>Nombre, email, teléfono, preferencias de viaje y datos de pago (procesados por terceros certificados PCI-DSS).</p>
+      <h4>Uso de la información</h4><p>Tus datos no se venden ni comparten con terceros sin tu consentimiento, salvo obligación legal.</p>
+      <h4>Tus derechos</h4><p>Puedes acceder, rectificar y eliminar tus datos en privacy@auroravoyages.com</p>
+    </div>
+  </div>
+</div>
+
+<!-- Terms -->
+<div class="modal-overlay" id="termsModal">
+  <div class="modal-box modal-xl">
+    <button class="modal-x" onclick="closeModal('termsModal')"><i class="fas fa-times"></i></button>
+    <h3>📋 Términos y Condiciones</h3>
+    <div class="legal-text">
+      <h4>Reservas y Pagos</h4><p>Se requiere un depósito del 30% para confirmar cualquier reserva. El saldo restante se abona 30 días antes de la fecha de salida.</p>
+      <h4>Cancelaciones</h4><p>Más de 30 días: reembolso completo. Entre 15-30 días: 50%. Menos de 15 días: sin reembolso, sujeto al seguro contratado.</p>
+      <h4>Responsabilidades</h4><p>Aurora Voyages actúa como intermediario entre el viajero y los proveedores de servicios.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Cookies -->
+<div class="modal-overlay" id="cookiesModal">
+  <div class="modal-box">
+    <button class="modal-x" onclick="closeModal('cookiesModal')"><i class="fas fa-times"></i></button>
+    <h3>🍪 Política de Cookies</h3>
+    <p>Usamos cookies para mejorar tu experiencia.</p>
+    <div class="cookie-opts">
+      <label><input type="checkbox" checked disabled/> Cookies esenciales (requeridas)</label>
+      <label><input type="checkbox" id="analyticsCk" checked/> Cookies analíticas</label>
+      <label><input type="checkbox" id="marketingCk"/> Cookies de marketing</label>
+    </div>
+    <button class="btn-gold" onclick="acceptCookies()">Aceptar selección</button>
+  </div>
+</div>
+
+<!-- Newsletter success -->
+<div class="modal-overlay" id="newsletterModal">
+  <div class="modal-box">
+    <div class="modal-big-icon">📬</div>
+    <h3>¡Suscrito!</h3>
+    <p>Recibirás las mejores ofertas y destinos secretos directamente en tu email.</p>
+    <button class="btn-gold" onclick="closeModal('newsletterModal')">¡Genial!</button>
+  </div>
+</div>
+
+<!-- Cookie banner -->
+<div class="cookie-banner-strip" id="cookieBanner">
+  <div class="cbs-inner">
+    <span>🍪 Usamos cookies para mejorar tu experiencia de viaje virtual. <a href="#" onclick="openCookies();return false">Más info</a></span>
+    <div class="cbs-btns">
+      <button class="btn-gold-xs" onclick="acceptAllCookies()">Aceptar Todo</button>
+      <button class="btn-outline-xs" onclick="openCookies()">Personalizar</button>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
